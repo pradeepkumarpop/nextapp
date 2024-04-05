@@ -11,6 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # You can specify any Node.js version you need
+
+      - name: Install dependencies
+        run: npm install  # Or yarn install, depending on your project setup
+
       - name: Build Next.js App
         run: npm run build  # Or yarn build, depending on your project setup
 
