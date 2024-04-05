@@ -2,7 +2,7 @@ name: Build and Download Next.js Artifacts
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-upload:
@@ -20,7 +20,7 @@ jobs:
           name: nextjs-build
           path: .next
 
-  download-artifacts (optional):  # Uncomment to download artifacts in a separate job
+  download-artifacts:  # Uncomment to download artifacts in a separate job
     runs-on: ubuntu-latest
     needs: build-and-upload  # This job depends on the previous job completing successfully
 
